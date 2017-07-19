@@ -6,19 +6,19 @@ public class Car {
     private String dataMade;
     private String typeEngine;
     private int maxSpeed;
-    private int timeTo100;
+    private double timeTo100;
     private int maxPeopleInside;
     private int currentPeopleInside;
     private int currentSpeed;
-    private ArrayList<CarWheel> carWheels = new ArrayList<>();
-    private ArrayList<CarDoor> carDoors = new ArrayList<>();
+    public ArrayList<CarWheel> carWheels = new ArrayList<>();
+    public ArrayList<CarDoor> carDoors = new ArrayList<>();
 
 
     public Car(String dataMade) {
         this.dataMade = dataMade;
     }
 
-    public Car(String dataMade, String typeEngine, int maxSpeed, int timeTo100, int maxPeopleInside, int currentPeopleInside, int currentSpeed) {
+    public Car(String dataMade, String typeEngine, int maxSpeed, double timeTo100, int maxPeopleInside, int currentPeopleInside, int currentSpeed) {
         this.dataMade = dataMade;
         this.typeEngine = typeEngine;
         this.maxSpeed = maxSpeed;
@@ -31,6 +31,10 @@ public class Car {
             carDoors.add(new CarDoor());
             carWheels.add(new CarWheel());
         }
+    }
+
+    public Car() {
+
     }
 
     public void setCurrentSpeed(int currentSpeed) {
@@ -111,7 +115,7 @@ public class Car {
                 minValue = data[i];
             }
         }
-        return minValue;
+       return minValue;
     }
 
     public void fullInfo() {
