@@ -1,18 +1,12 @@
-package com.gmail.fomichov.m;
-
-import com.gmail.fomichov.m.automobile.Car;
+package automobile;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class CommandLIne {
     private static ArrayList<Car> cars = new ArrayList<>();
 
-    public static void main(String[] args) {
-        start();
-    }
-
-    private static void start() {
+    public void start() {
         System.out.println("Выберите пункт меню:");
         System.out.println("1 - Создать автомобиль");
         System.out.println("2 - Вывести данные об автомобиле");
@@ -43,10 +37,7 @@ public class Main {
         }
     }
 
-    private static void controlPeople() {
-    }
-
-    private static void createAuto() {
+    private void createAuto() {
         System.out.println("Введите данные по " + (cars.size() + 1) + " авто");
         System.out.println("дата выпуска:");
         String dataMade = getString();
@@ -66,7 +57,7 @@ public class Main {
         start();
     }
 
-    private static void showAuto() {
+    private void showAuto() {
         if (statusAuto()) {
             for (int i = 0; i < cars.size(); i++) {
                 System.out.println("Автомобиль - " + (i + 1));
@@ -79,7 +70,7 @@ public class Main {
         start();
     }
 
-    private static void controlDoor() {
+    private void controlDoor() {
         if (statusAuto()) {
             int tempCar;
             if (cars.size() > 1) {
@@ -95,7 +86,7 @@ public class Main {
         start();
     }
 
-    private static void startDoor(int car, int door) {
+    private void startDoor(int car, int door) {
         System.out.println("1 - открыть дверь");
         System.out.println("2 - закрыть дверь");
         System.out.println("3 - открыть окно");
@@ -145,7 +136,7 @@ public class Main {
     }
 
 
-    private static void controlWheel() {
+    private void controlWheel() {
         if (statusAuto()) {
             int tempCar;
             if (cars.size() > 1) {
@@ -161,7 +152,7 @@ public class Main {
         start();
     }
 
-    private static void startWheel(int car, int wheel) {
+    private void startWheel(int car, int wheel) {
         System.out.println("1 - заменить колесо");
         System.out.println("2 - стереть колесо");
         System.out.println("3 - состояние колеса");
@@ -210,7 +201,7 @@ public class Main {
     }
 
     // проверяем есть ли автомобиль
-    private static boolean statusAuto() {
+    private boolean statusAuto() {
         if (cars.size() == 0) {
             return false;
         } else {
@@ -219,7 +210,7 @@ public class Main {
     }
 
     // проверяем на целое число
-    private static int checkInt() {
+    private int checkInt() {
         Scanner sc = new Scanner(System.in);
         int value;
         while (true) {
@@ -236,7 +227,7 @@ public class Main {
     }
 
     // проверяем на дробное число
-    private static double checkDouble() {
+    private double checkDouble() {
         Scanner sc = new Scanner(System.in);
         double value;
         while (true) {
@@ -253,14 +244,14 @@ public class Main {
     }
 
     // читаем строку
-    private static String getString() {
+    private String getString() {
         Scanner sc = new Scanner(System.in);
         String value = sc.nextLine();
         return value;
     }
 
     // выводим ошибку и запускаем заново
-    private static void errorAuto() {
+    private void errorAuto() {
         System.out.println("Нет ни одной машины в системе!\n");
         start();
     }

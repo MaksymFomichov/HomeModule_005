@@ -1,4 +1,4 @@
-package com.gmail.fomichov.m.automobile;
+package automobile;
 
 public class CarDoor {
     private boolean door;

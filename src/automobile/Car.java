@@ -1,4 +1,4 @@
-package com.gmail.fomichov.m.automobile;
+package automobile;
 
 import java.util.ArrayList;
 
